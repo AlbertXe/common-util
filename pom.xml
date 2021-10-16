@@ -51,6 +51,21 @@
             <version>4.11</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
+<!--        定时任务-->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.77</version>
+        </dependency>
+
+
 
     </dependencies>
 
