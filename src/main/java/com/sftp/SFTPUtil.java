@@ -151,7 +151,8 @@ public class SFTPUtil {
         InputStream is = sftp.get(downloadFile);
 
         //xie
-        byte[] fileData = IOUtils.readAllBytes(is);
+        byte[] fileData = null;
+//                IOUtils.readAllBytes(is);
 
         return fileData;
     }
