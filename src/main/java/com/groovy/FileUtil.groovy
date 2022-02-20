@@ -1,13 +1,12 @@
 package com.groovy
 
-import java.nio.file.Files
-
 def changeFileName(basePath,oldName,newName) {
-    def files = Files.find(basePath)
+    File file = new File(basePath)
+    def files = file.listFiles()
     files.each {
         println(it)
     }
 }
 
-changeFileName("C:\\Users\\Administrator\\.ssh")
+changeFileName("C:\\Users\\Administrator\\.ssh","","")
 
