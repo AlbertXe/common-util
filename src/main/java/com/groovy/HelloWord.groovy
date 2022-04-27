@@ -1,4 +1,7 @@
 import com.alibaba.fastjson.JSON
+import com.groovy.BaseDTO
+
+import java.lang.reflect.Field
 
 //class HelloWord{
 //    public static void main(String[] args) {
@@ -27,6 +30,33 @@ def changeFileName(basePath,oldName,newName) {
 }
 
 changeFileName("C:\\Users\\Administrator\\.ssh")
+
+baseFields = ['crtTms','crtUsr'] as LinkedHashSet<String>
+shardingKey = 'userId'
+
+fields = baseFields+shardingKey as LinkedHashSet<String>
+
+println fields
+
+
+
+parseJava()
+
+def parseJava(String fileName){
+    def fields = BaseDTO.class.getDeclaredFields()
+    def fieldMap = [:]
+    fields.each {e->
+        println e
+        fieldMap.put(e.getName(),e.toGenericString())
+    }
+    println fieldMap
+
+    println fieldMap.id
+
+    fields.eachWithIndex { Field field, int i ->
+        println i+" "+field.getName()
+    }
+}
 
 
 
