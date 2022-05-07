@@ -8,4 +8,8 @@
 2 groovy脚本 然后赋值到tools groovy console执行
 3 java调用脚本
 
+#### JGIT
+
+
+
 
