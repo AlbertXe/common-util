@@ -2,7 +2,13 @@ package com.util;
 
 import com.google.common.collect.Lists;
 import lombok.SneakyThrows;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import java.io.InputStream;
 import java.net.JarURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -34,6 +40,21 @@ public class ClassUtil {
             result.addAll(findClassJar(pack));
         }
         return result;
+    }
+
+    @SneakyThrows
+    public static void findXml(String pattern) {
+        PathMatchingResourcePatternResolver rr = new PathMatchingResourcePatternResolver();
+        Resource[] resources = rr.getResources(pattern);
+
+        JAXBContext context = JAXBContext.newInstance(PluginInfo.class);
+
+        for (Resource resource : resources) {
+            InputStream is = resource.getURL().openStream();
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            unmarshaller.unmarshal(is);
+            is.close();
+        }
     }
 
     @SneakyThrows
