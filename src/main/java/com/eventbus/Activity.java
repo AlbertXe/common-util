@@ -1,16 +1,10 @@
 package com.eventbus;
 
-import com.google.common.eventbus.Subscribe;
+public interface Activity extends Executable {
+    String activityNo();
 
-public class Activity{
-    @Subscribe
-    public void handle(Integer msg) {
-        System.out.println("start handler Integer msg " + msg);
-    }
+    ActivityTbl activity();
 
-    @Subscribe
-    public void handle(String msg) {
-        System.out.println("start handler String msg " + msg);
-    }
+    ExecuteAction triggerEvents(BusinessContext ctx);
 
 }
