@@ -8,7 +8,8 @@ import java.util.Map;
  * @create: 2022-05-12 18:20
  */
 public class EventExecutors {
-    public static Map<String, Object> executeOnlineEvent(Map<String, Object>) {
-        DefaultExecutor executor;
+    public static Map<String, Object> executeOnlineEvent(Map<String, Object> map) {
+//        DefaultExecutor executor;
+        return null;
     }
 }

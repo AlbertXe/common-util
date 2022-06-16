@@ -26,7 +26,7 @@ public class RpcNettyHandler extends ChannelInboundHandlerAdapter {
         server.getHandlePool()
                 .submit(()->{
                     server.getHandler()
-                            .han
+                            .handle(reqObj);
                 });
 
 

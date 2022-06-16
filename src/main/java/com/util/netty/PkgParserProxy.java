@@ -3,9 +3,12 @@ package com.util.netty;
 /**
  * @description:
  * @author: AlbertXe
- * @create: 2022-05-11 22:49
+ * @create: 2022-05-12 11:17
  */
-public class JsonParser implements PkgParser {
+public class PkgParserProxy implements PkgParser {
+    public PkgParserProxy(JsonParser jsonParser) {
+    }
+
     @Override
     public DataArea parse(String var1, DataInterface dataInterface) {
         return null;

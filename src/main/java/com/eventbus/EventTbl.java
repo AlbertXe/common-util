@@ -12,5 +12,6 @@ import lombok.Data;
 public class EventTbl {
     private String eventId;
 
+    private String intfcName;
 
 }

@@ -17,7 +17,8 @@ public interface Event extends Executable {
     }
 
     static Event createEvent(EventTbl eventTbl) {
-        AbstractEvent
+//        AbstractEvent
+        return null;
     }
 
 }

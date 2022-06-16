@@ -11,7 +11,7 @@ import java.util.Map;
 public class EventBusImpl implements EventBus {
     @Override
     public void handleEvent() {
-        Map<String,Object> request;
+        Map<String,Object> request = null;
         Map<String,Object> response = EventExecutors.executeOnlineEvent(request);
 
     }
