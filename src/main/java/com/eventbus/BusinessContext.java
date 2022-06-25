@@ -24,7 +24,7 @@ public class BusinessContext extends DataMap {
     private DataMap requestMap;
     private Function<BusinessContext,?> responseSupplier;
 
-
+    private DimensionMap dimensionMap;
 
     private String currEventId;
     private Object currEvent;

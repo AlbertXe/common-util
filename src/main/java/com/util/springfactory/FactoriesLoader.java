@@ -28,6 +28,18 @@ public class FactoriesLoader {
         return factories.isEmpty() ? null : (T) factories.values().toArray()[factories.size() - 1];
     }
 
+    public static <T> List<T> getAllFactories(Class<T> factoryClass) {
+        Map<String, T> factories = getFactories(factoryClass);
+        if (factories.isEmpty()) {
+            return Collections.EMPTY_LIST;
+        }
+        List<T> ret = new ArrayList<>();
+        for (String key : factories.keySet()) {
+            ret.add(factories.get(key));
+        }
+        return ret;
+    }
+
     private static <T> Map<String,T> getFactories(Class<T> factoryClass) {
         Map<String, T> instance = (Map<String, T>) cache.get(factoryClass);
         if (instance != null) {
