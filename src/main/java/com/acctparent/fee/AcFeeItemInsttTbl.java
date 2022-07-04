@@ -1,11 +1,14 @@
 package com.acctparent.fee;
 
+import lombok.Data;
+
 import java.math.BigDecimal;
 
 /**
  * @author xiehongwei
  * @date 2022/4/11 1:35 下午
  */
+@Data
 public class AcFeeItemInsttTbl {
     private String instCd;
     private String feeItemCd;

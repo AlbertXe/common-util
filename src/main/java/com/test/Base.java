@@ -1,7 +1,7 @@
 package com.test;
 
 public class Base {
-    public static final Integer FIELD_0 = 1;
+    public static final Long FIELD_0 = 99999L;
     public static final String FIELD_A = "field_a";
     public static String FIELD_B = "field_b";
     public String FIELD_C = "field_c";
