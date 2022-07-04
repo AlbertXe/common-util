@@ -11,7 +11,28 @@ import lombok.Data;
 @Data
 public class ActyTrgrEvntTbl {
     private String initEventId;
+    /**
+     * 活动编号
+     */
     private String actyNo;
+    /**
+     * 识别因子
+     */
     private String idfyInsttCd;
-    private String eventId;
+    /**
+     * 触发事件号
+     */
+    private String trgrEventId;
+
+    /**
+     * 触发方式代码
+     */
+    private String trgrMthdCd;
+
+    /**
+     * 触发模式代码 SYNC同步  异步ASYNC
+     */
+    private String trgrModeCd;
+
+    
 }

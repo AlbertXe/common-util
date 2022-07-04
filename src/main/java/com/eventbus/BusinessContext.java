@@ -15,9 +15,9 @@ import java.util.function.Function;
 public class BusinessContext extends DataMap {
     private final Map<String, Integer> eventCounter = new HashMap<>();
 
-
+    private String txnCd;
     private String custId;
-    private String companyCust;
+    private boolean companyCust;
     private String eventId;
     private Object request;
     private Object response;

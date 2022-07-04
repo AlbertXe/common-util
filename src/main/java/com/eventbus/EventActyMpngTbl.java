@@ -10,8 +10,14 @@ import lombok.Data;
  */
 @Data
 public class EventActyMpngTbl {
-    private int actyExecSeqNo;
     private String acTyId;
+    private String evntId;
+    private int actyExecSeqNo;
+    /**
+     * 会计用途标志
+     */
+    private int acctgPurpFlg;
+    
 
     
 

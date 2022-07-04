@@ -18,19 +18,21 @@ public class DefaultExecutor extends
     private ApplicationContext context;
 
     @Override
-    protected Map<String, Object> responseToOutput(BusinessContext ctx, Event event, AbstractResponse response) {
-//        Serializer
-        return null;
-    }
-
-    @Override
     protected AbstractRequest inputToRequest(BusinessContext ctx, Event event, Map<String, Object> input) {
         String requestName = event.event().getIntfcName() + "Request";
 
         AbstractRequest request = (AbstractRequest) context.getBean(requestName);
         BeanUtils.copyProperties(input,request);
 
-//        BeanValidator.validate(request);
+        BeanValidator.validate(request);
+        return request;
+    }
+
+    @Override
+    protected Map<String, Object> responseToOutput(BusinessContext ctx, Event event, AbstractResponse response) {
+//        Serializer
         return null;
     }
+
+
 }

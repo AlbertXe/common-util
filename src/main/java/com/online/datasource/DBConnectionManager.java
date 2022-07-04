@@ -8,4 +8,8 @@ public interface DBConnectionManager {
     void getDatabaseId();
 
     void beginTransaction();
+
+    void commit();
+
+    void rollback();
 }

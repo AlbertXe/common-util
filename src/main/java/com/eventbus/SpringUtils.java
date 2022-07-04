@@ -3,6 +3,7 @@ package com.eventbus;
 import org.springframework.context.ApplicationContext;
 
 /**
+ * Spring Bean工具
  * @description:
  * @author: AlbertXe
  * @create: 2022-05-12 21:21

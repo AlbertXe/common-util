@@ -47,6 +47,8 @@ public abstract class AbstractExecutor<I, O, Q extends Request, P extends Respon
     protected void afterExecute(BusinessContext ctx, Event event, I input, O output) {
     }
 
+    protected abstract Q inputToRequest(BusinessContext ctx, Event event, I input);
+
     protected abstract O responseToOutput(BusinessContext ctx, Event event, P response);
 
     @SneakyThrows
@@ -93,8 +95,6 @@ public abstract class AbstractExecutor<I, O, Q extends Request, P extends Respon
         ctx.setRequestMap(dataMap);
         return map;
     }
-
-    protected abstract Q inputToRequest(BusinessContext ctx, Event event, I input);
 
 
     protected Event createEvent(BusinessContext ctx) {

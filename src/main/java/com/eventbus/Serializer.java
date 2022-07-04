@@ -25,8 +25,6 @@ public class Serializer {
     static {
         JavaTimeModule module = new JavaTimeModule();
         module.addSerializer(LocalDateTime.class,new LocalDateTimeSerializer());
-
-
     }
 
     public static class LocalDateTimeSerializer extends JsonSerializer<LocalDateTime> {
