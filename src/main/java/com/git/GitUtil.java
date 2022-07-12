@@ -92,10 +92,8 @@ public class GitUtil {
             git.cloneRepository().setURI(cloneURL).setDirectory(file).call();
             resultFlag = true;
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (GitAPIException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return resultFlag;
