@@ -1,5 +1,6 @@
 package com.register;
 
+import com.annotation.MyService;
 import com.pojo.User;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.MutablePropertyValues;
@@ -7,6 +8,9 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
+import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
+import org.springframework.core.type.filter.AnnotationTypeFilter;
+import org.springframework.stereotype.Component;
 
 /**
  * 自己实现 解析特定beanDefinition
@@ -15,6 +19,7 @@ import org.springframework.beans.factory.support.GenericBeanDefinition;
  * @author: AlbertXe
  * @create: 2022-07-12 22:51
  */
+@Component
 public class BeanDefinitionTest implements BeanDefinitionRegistryPostProcessor {
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
@@ -24,6 +29,14 @@ public class BeanDefinitionTest implements BeanDefinitionRegistryPostProcessor {
         propertyValues.addPropertyValue("name", "xie");
 
         registry.registerBeanDefinition("user", beanDefinition);
+
+
+        ClassPathBeanDefinitionScanner scanner = new ClassPathBeanDefinitionScanner(registry);
+        scanner.addIncludeFilter(new AnnotationTypeFilter(MyService.class));
+        scanner.scan("com");
+        for (String name : registry.getBeanDefinitionNames()) {
+            System.out.println("BeanDefinitionTest 打印bean name ====== "+name);
+        }
     }
 
     @Override
