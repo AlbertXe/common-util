@@ -11,7 +11,7 @@ import org.w3c.dom.Element;
  * @author: AlbertXe
  * @create: 2022-07-15 01:47
  */
-public class MyRedisTag extends NamespaceHandlerSupport {
+public class MyRedisTagHandler extends NamespaceHandlerSupport {
     @Override
     public void init() {
         registerBeanDefinitionParser("redis", new RedisBeanDefinitionParser());
