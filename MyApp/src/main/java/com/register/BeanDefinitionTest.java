@@ -2,6 +2,7 @@ package com.register;
 
 import com.annotation.MyService;
 import com.pojo.User;
+import com.service.MyScope;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -41,6 +42,7 @@ public class BeanDefinitionTest implements BeanDefinitionRegistryPostProcessor {
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        beanFactory.registerScope("myScope",new MyScope());
 
     }
 }
