@@ -1,3 +1,5 @@
+package com.groovy
+
 import com.alibaba.fastjson.JSON
 import com.groovy.BaseDTO
 

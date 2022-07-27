@@ -9,5 +9,5 @@ import com.online.base.WorkChannelBoard;
  * @create: 2022-07-04 13:14
  */
 public class OnlineEngineTemplate {
-    private final WorkChannelBoard board;
+    private final WorkChannelBoard board = null;
 }
