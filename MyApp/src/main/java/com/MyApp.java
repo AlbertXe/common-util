@@ -2,6 +2,7 @@ package com;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @description:
@@ -9,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @create: 2022-06-16 21:50
  */
 @SpringBootApplication
-//@EnableTransactionManagement
+@EnableTransactionManagement
 public class MyApp {
     public static void main(String[] args) {
         SpringApplication.run(MyApp.class, args);
