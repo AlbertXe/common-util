@@ -9,7 +9,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void name() {
-        System.out.println("UserServiceImpl");
+        System.out.println("UserServiceImpl name");
+    }
+
+
+    public void age() {
+        System.out.println("UserServiceImpl age");
     }
 
 
