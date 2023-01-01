@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tables>
+    <table id="AcEvntTbl" name="">
+        <fields>
+            <field id="id"  type="String"></field>
+            <field id="age" type="int"></field>
+            <field id="user" type="String"></field>
+        </fields>
+    </table>
+    <table id="AcActyTbl" name="">
+        <fields>
+            <field id="" name="" type=""></field>
+            <field id="" name="" type=""></field>
+            <field id="" name="" type=""></field>
+        </fields>
+    </table>
+</tables>
