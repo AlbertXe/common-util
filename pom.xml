@@ -11,6 +11,8 @@
     <modules>
         <module>MyApp</module>
         <module>common</module>
+        <module>adp-dao-base</module>
+        <module>adp-dao-datasource</module>
     </modules>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
