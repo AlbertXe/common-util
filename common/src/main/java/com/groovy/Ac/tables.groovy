@@ -3,7 +3,7 @@ package com.groovy.Ac
 import groovy.text.GStringTemplateEngine
 
 def bindings = [:]
-tables = getTables("/Users/xiehongwei/IdeaProjects/common-util/common/src/main/java/com/groovy/Ac/Ac.tables.xml",bindings)
+def tables = getTables("/Users/xiehongwei/IdeaProjects/common-util/common/src/main/java/com/groovy/Ac/Ac.tables.xml",bindings)
 
 failures = generateAcTables('AcEvntTbl',bindings)
 

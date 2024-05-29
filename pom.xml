@@ -11,6 +11,7 @@
     <modules>
         <module>MyApp</module>
         <module>common</module>
+        <module>JavaAgentDemo</module>
     </modules>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
