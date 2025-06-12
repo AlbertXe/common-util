@@ -1,10 +1,8 @@
 package com.quartz;
 
-import com.alibaba.fastjson.JSON;
 import org.quartz.Job;
 import org.quartz.JobDetail;
 import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
 
 /**
  * @author xiehongwei
@@ -12,10 +10,9 @@ import org.quartz.JobExecutionException;
  */
 public class CommonJob implements Job {
     @Override
-    public void execute(JobExecutionContext context) throws JobExecutionException {
+    public void execute(JobExecutionContext context) {
         JobDetail jobDetail = context.getJobDetail();
-        System.out.println(JSON.toJSONString(jobDetail));
-        System.out.println(Thread.currentThread().getName()+"doing");
+        System.out.println(Thread.currentThread().getName()+"===============>>>doing");
 
     }
 }
