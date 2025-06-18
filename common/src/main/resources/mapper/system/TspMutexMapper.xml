@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.TspMutexMapper">
+    
+    <resultMap type="TspMutex" id="TspMutexResult">
+        <result property="systemCode"    column="system_code"    />
+        <result property="subSystemCode"    column="sub_system_code"    />
+        <result property="name"    column="name"    />
+    </resultMap>
+
+    <sql id="selectTspMutexVo">
+        select system_code, sub_system_code, name from tsp_mutex
+    </sql>
+
+    <select id="selectTspMutexList" parameterType="TspMutex" resultMap="TspMutexResult">
+        <include refid="selectTspMutexVo"/>
+        <where>  
+        </where>
+    </select>
+    
+    <select id="selectTspMutexBySystemCode" parameterType="String" resultMap="TspMutexResult">
+        <include refid="selectTspMutexVo"/>
+        where system_code = #{systemCode}
+    </select>
+        
+    <insert id="insertTspMutex" parameterType="TspMutex">
+        insert into tsp_mutex
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="systemCode != null">system_code,</if>
+            <if test="subSystemCode != null">sub_system_code,</if>
+            <if test="name != null">name,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="systemCode != null">#{systemCode},</if>
+            <if test="subSystemCode != null">#{subSystemCode},</if>
+            <if test="name != null">#{name},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTspMutex" parameterType="TspMutex">
+        update tsp_mutex
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="subSystemCode != null">sub_system_code = #{subSystemCode},</if>
+            <if test="name != null">name = #{name},</if>
+        </trim>
+        where system_code = #{systemCode}
+    </update>
+
+    <delete id="deleteTspMutexBySystemCode" parameterType="String">
+        delete from tsp_mutex where system_code = #{systemCode}
+    </delete>
+
+    <delete id="deleteTspMutexBySystemCodes" parameterType="String">
+        delete from tsp_mutex where system_code in 
+        <foreach item="systemCode" collection="array" open="(" separator="," close=")">
+            #{systemCode}
+        </foreach>
+    </delete>
+
+</mapper>

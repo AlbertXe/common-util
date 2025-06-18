@@ -6,7 +6,6 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.InputStream;
 import java.net.JarURLConnection;
@@ -52,7 +51,7 @@ public class ClassUtil {
         for (Resource resource : resources) {
             InputStream is = resource.getURL().openStream();
             Unmarshaller unmarshaller = context.createUnmarshaller();
-            unmarshaller.unmarshal(is);
+            PluginInfo pluginInfo = (PluginInfo) unmarshaller.unmarshal(is);
             is.close();
         }
     }
