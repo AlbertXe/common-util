@@ -14,4 +14,12 @@ public class SpringUtils {
     public static <T>T getBean(String name, Class<T> clz) {
         return applicationContext.getBean(name, clz);
     }
+
+    public static <T>T getBean(Class<T> clz) {
+        return applicationContext.getBean(clz);
+    }
+
+    public static void setApplicationContext(ApplicationContext applicationContext) {
+        SpringUtils.applicationContext = applicationContext;
+    }
 }
